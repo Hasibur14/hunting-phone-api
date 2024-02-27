@@ -9,8 +9,19 @@ const loadPhone = async (searchText) => {
 const displayPhone = phones => {
 
     const phoneContainer = document.getElementById('phone-container');
+
     phoneContainer.textContent = '';
-    phones.slice(0,10);
+
+    const showAllContainer = document.getElementById('show-all-container');
+    if (phones.length > 10) {
+        showAllContainer.classList.remove('hidden')
+    }
+    else{
+        showAllContainer.classList.add('hidden')
+    }
+
+    //display only first 10 phones
+    phones.slice(0, 10);
 
     phones.forEach(phone => {
         console.log(phone)
