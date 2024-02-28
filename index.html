@@ -18,22 +18,50 @@
 
         <section>
             <div class="bg-slate-100 p-4 m-4 rounded-lg">
-                <input id="searchField" type="text" placeholder="Search..."
+                <input id="search-field" type="text" placeholder="Search..."
                     class="input input-bordered w-full max-w-xs" />
                 <button onclick="searchHandler()" class="btn btn-accent">SEARCH</button>
+
+                <!-- anther button
+                <input id="search-field2" type="text" placeholder="Search..."
+                    class="input input-bordered w-full max-w-xs" />
+                <button onclick="searchHandler2()" class="btn btn-secondary">SEARCH</button> -->
             </div>
         </section>
 
         <!-- card section -->
         <section class="">
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- show all btn -->
-                <div id="show-all-container" class="hidden">
-                    <button class="btn btn-accent">SHOW ALL</button>
+            </div>
+            <!-- show all hidden-btn -->
+            <div id="show-all-container" class="hidden text-center my-8">
+                <button onclick="handleShowAll()" class="btn btn-accent">SHOW ALL</button>
+
+            </div>
+        </section>
+        <!-- show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-detail-phone-name" class="font-bold text-lg"> </h3>
+                <div id="show-detail-container">
 
                 </div>
-        </section>
+
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
+
 
     <!-- script -->
     <script src="./js/phone.js"></script>
